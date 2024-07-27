@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bar Menu</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="filterImages('all')">All</a></li>
+                <li><a href="#" onclick="filterImages('strong')">Strong</a></li>
+                <li><a href="#" onclick="filterImages('sour')">Sour</a></li>
+                <li><a href="#" onclick="filterImages('light')">Light</a></li>
+                <li><a href="#" onclick="filterImages('non')">Mocktails</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="gallery">
+            <img src="images/light1.jpg" class="all light">
+            <img src="images/light2.jpg" class="all light">
+            <img src="images/light3.jpg" class="all light">
+            <img src="images/light4.jpg" class="all light">
+            <img src="images/non1.jpg" class="all non">
+            <img src="images/non2.jpg" class="all non">
+            <img src="images/non3.jpg" class="all non">
+            <img src="images/non4.jpg" class="all non">
+            <img src="images/non5.jpg" class="all non">
+            <img src="images/non6.jpg" class="all non">
+            <img src="images/non7.jpg" class="all non">
+            <img src="images/sour1.jpg" class="all sour">
+            <img src="images/sour2.jpg" class="all sour">
+            <img src="images/sour3.jpg" class="all sour">
+            <img src="images/sour4.jpg" class="all sour">
+            <img src="images/sour5.jpg" class="all sour">
+            <img src="images/sour6.jpg" class="all sour">
+            <img src="images/strong1.jpg" class="all strong">
+            <img src="images/strong2.jpg" class="all strong">
+            <img src="images/strong3.jpg" class="all strong">
+            <img src="images/strong4.jpg" class="all strong">
+            <img src="images/strong5.jpg" class="all strong">
+            <img src="images/strong6.jpg" class="all strong">
+        </div>
+    </main>
+    <script>
+        function filterImages(category) {
+            var images = document.querySelectorAll('.gallery img');
+            images.forEach(function(img) {
+                if (category === 'all') {
+                    img.style.display = 'block';
+                } else {
+                    img.style.display = img.classList.contains(category) ? 'block' : 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
